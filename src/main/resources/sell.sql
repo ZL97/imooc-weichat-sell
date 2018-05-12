@@ -12,7 +12,7 @@ create table `product_info` (
   comment '类目编号',
   `create_time`         timestamp     not null default current_timestamp
   comment '创建时间',
-  `update_time`         timestamp     not null
+  `update_time`         timestamp     not null default current_timestamp
   on update current_timestamp
   comment '更新时间',
   primary key (`product_id`)
@@ -27,7 +27,7 @@ create table `product_category` (
   comment '类目编号',
   `create_time`   timestamp   not null default current_timestamp
   comment '创建时间',
-  `update_time`   timestamp   not null
+  `update_time`   timestamp   not null default current_timestamp
   on update current_timestamp,
   primary key (`category_id`),
   unique key `uqe_category_type`(`category_type`)
@@ -52,7 +52,7 @@ create table `order_master` (
   comment '支付状态,默认0 未支付',
   `create_time`   timestamp     not null default current_timestamp
   comment '创建时间',
-  `update_time`   timestamp     not null
+  `update_time`   timestamp     not null default current_timestamp
   on update current_timestamp,
   primary key (`order_id`),
   key `idx_buyer_openid`(buyer_openid)
@@ -74,7 +74,7 @@ create table `order_detail` (
   comment '商品小图',
   `create_time`      timestamp     not null default current_timestamp
   comment '创建时间',
-  `update_time`      timestamp     not null
+  `update_time`      timestamp     not null default current_timestamp
   on update current_timestamp,
   primary key (`order_id`),
   key `idx_order_id`(`order_id`)
@@ -89,7 +89,7 @@ create table `seller_info` (
   comment '微信openid',
   `create_time` timestamp   not null default current_timestamp
   comment '创建时间',
-  `update_time` timestamp   not null
+  `update_time` timestamp   not null default current_timestamp
   on update current_timestamp
 )
   comment '买家信息表';
