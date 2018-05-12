@@ -1,0 +1,44 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /sell
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mappings: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sell?characterEncoding=utf8&useSSL=false&useUnicode=true
+    username: root
+    password: 123456
+  devtools:
+    restart:
+      enabled: true
+  jackson:
+    default-property-inclusion: non_null
+  freemarker:
+    charset: utf-8
+    suffix: .ftl
+    cache: false
+  redis:
+    host: localhost
+
+
+wechat:
+  mpAppId: wx0edaf10cd7e14f45
+  mpAppSecret: 3f29209265e02871e9d526dcc8ff8a45
+  mchId:
+  mchKey:
+  keyPath:
+  notifyUrl:
+
+project-url:
+  sell: http://localhost:8088/sell
+
+
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
